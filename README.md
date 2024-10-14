@@ -14,7 +14,11 @@ The mlParkDetect program requires a Keras format model file to operate. You will
 
 https://teachablemachine.withgoogle.com
 
-to create your model. Labels where you should provide data are: negDec,posDec,Parked,negRA,posRA. 
+to create your model. Labels where you should provide data are: negDec,posDec,Parked,negRA,posRA. Read 
+
+https://www.gordtulloch.com/wp-content/uploads/2023/05/Detecting-Clouds-with-ML.pdf
+
+for instructions for creating a model.
 
 ## INI File Parameters
 The mlParkDetect.ini file supports the following parameters:
