@@ -10,37 +10,47 @@ Releases:
 * None, still under active development
 
 ## Park detection model
-The mlParkDetect program requires a Keras format model file to operate. You will need to train a model before using this software. Complete instructions TODO.
+The mlParkDetect program requires a Keras format model file to operate. You will need to train a model before using this software. Use 
+
+https://teachablemachine.withgoogle.com
+
+to create your model. Labels where you should provide data are: negDec,posDec,Parked,negRA,posRA. 
 
 ## INI File Parameters
 The mlParkDetect.ini file supports the following parameters:
 
 | Parameter | Default | Description |
 |-----------|--------------------------------------------------------|---------------------------------------------------------------------|
-| TRAINFOLDER | /home/$USER/mlParkDetect/train | Folder where training files are |
-| KERASMODEL | mlParkDetect.keras | Model file to use/create |
-| LATESTIMAGE | latest.jpg | Latest image of telescope to analyze |
-
+| KERASMODEL | model/keras_model.h5 | Model file to use/create |
+| KERASLABEL | model/labels.txt | Model file to use/create |
+| LATESTIFILE | latest.jpg | Latest image of telescope to analyze |
 
 ## Installation in Python
-To install and run mlParkDetect in Python, create a Python virtual environment (to avoid various package conflicts) and run the application from a terminal window.
+To install and run mlParkDetect in Python, create a Python virtual environment (to avoid various package conflicts) and run the application from a terminal window. The following instructions are for Ubuntu. You may need to adjust the package names for other Linux distributions. 
 
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt update 
+    sudo apt --assume-yes install python3.10 python3.10-venv g++ libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncurses5-dev \
+        libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev libpng-dev libnova-dev libdbus-1-dev libdbus-glib-1-2 \
+        libdbus-glib-1-dev swig cmake libindi-dev git-all wget curl llvm unzip software-properties-common
     git clone https://github.com/gordtulloch/mlParkDetect.git
     cd mlParkDetect
-    python3 -m venv .venv           
-    source .venv/bin/activate        # in Linux
-    .venv\scripts\activate.bat        # in Windows
-
+    mkdir model
+    python3 -m venv .venv             # Note that if the correct Python version is not the only one installed you should specify the version eg python3.8
+    pip3 install git+https://github.com/indilib/pyindi-client.git
+    source .venv/bin/activate        # in Linux, do this every time you run the program to set up the virtual environment
     pip3 install -r requirements.txt
     python3 mlParkDetect.py
 
-You need to get a jpg named latest.jpg from your observatory into the mlParkDetect folder or adjust the path of the program to point to it in the ini file. 
+You need to get a jpg named latest.jpg from your observatory into the mlParkDetect folder or adjust the path of the program to point to it in the ini file.  
 
-## Updating in Python
+## Updating
 
     cd mlParkDetect
     git pull
+    source .venv/bin/activate
+    pip3 install -r requirements.txt 
 
 ## Release Log
-0.0.1 In active development
+0.0.1 In active development, currently testing Parked,negDec,posDec model.
 
