@@ -16,8 +16,7 @@ class ObsyConfig():
         if not os.path.exists(self.file_path):
             logger.info("Config file not found, creating with defaults.")
             self.config['DEFAULT'] = {
-                'LATESTFILE'    : '/home/gtulloch/mlParkDetect/latest.jpg',         # What the latest file is called
-                'TRAINFOLDER'   : '/home/gtulloch/mlParkDetect/train',              # Folder where training files are
+                'LATESTFILE'    : 'test/latest.jpg',         # What the latest file is called
                 'KERASMODEL'     : 'model/keras_Model.h5',                          # Model file to use
                 'KERASLABEL'     : 'model/labels.txt',                              # Model file to use
             }

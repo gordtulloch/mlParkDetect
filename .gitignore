@@ -4,6 +4,9 @@ train/
 # Keras models
 model/
 
+# Test file
+test/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
