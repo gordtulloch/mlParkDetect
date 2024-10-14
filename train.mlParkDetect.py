@@ -6,22 +6,13 @@ import cv2
 from PIL import Image
 import numpy
 
-# Set up logging
-import logging
-logFilename = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'mlParkDetect.log')
-logger = logging.getLogger()
-fhandler = logging.FileHandler(filename=logFilename, mode='a')
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-fhandler.setFormatter(formatter)
-logger.addHandler(fhandler)
-
 if os.name == 'nt':
 	_ = os.system('cls')
 else:
 	_ = os.system('clear')
 VERSION='0.1'
-print ("trainMlParkDetect "+VERSION+" by Gord Tulloch Report errors to https://github.com/gordtulloch/mlParkDetect")
 
+print ("trainMlParkDetect "+VERSION+" by Gord Tulloch Report errors to https://github.com/gordtulloch/mlParkDetect")
 
 # Set up logging
 import logging
@@ -34,8 +25,8 @@ logger.addHandler(fhandler)
 logger.setLevel(logging.INFO)
 logger.info("Program Start - trainMlCloudDetect"+VERSION)
 
-from obsyConfig import McpConfig
-config=McpConfig()
+from obsyConfig import ObsyConfig
+config=ObsyConfig()
 
 dataDir=config.get('TRAINFOLDER')
 

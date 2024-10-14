@@ -1,9 +1,11 @@
 Installation in Python
 To install and run mlParkDetect in Python, create a Python virtual environment (to avoid various package conflicts) and run the application from a terminal window.
 
-The following instructions are for Debian type Linuxes. 
+The following instructions are for Ubuntu. You may need to adjust the package names for other Linux distributions. 
 
-    sudo apt --assume-yes install g++ libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncurses5-dev \
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt update 
+    sudo apt --assume-yes install python3.10 python3.10-venv g++ libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncurses5-dev \
         libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev libpng-dev libnova-dev libdbus-1-dev libdbus-glib-1-2 \
         libdbus-glib-1-dev swig cmake libindi-dev git-all wget curl llvm unzip software-properties-common
     git clone https://github.com/gordtulloch/mlParkDetect.git

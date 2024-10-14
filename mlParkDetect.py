@@ -26,16 +26,13 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 fhandler.setFormatter(formatter)
 logger.addHandler(fhandler)
 logger.info("Program Start - mlParkDetect"+VERSION)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 if os.name == 'nt':
 	_ = os.system('cls')
 else:
 	_ = os.system('clear')
 print ("mlParkDetect "+VERSION+" by Gord Tulloch report issues at https://github.com/gordtulloch/mlParkDetect ")
-
-latestFile=config.get("LATESTFILE")
-
 
 #######################################################################################
 ## DO NOT EDIT FROM HERE ON
