@@ -40,7 +40,7 @@ To install and run mlParkDetect in Python, create a Python virtual environment (
     git clone https://github.com/gordtulloch/mlParkDetect.git
     cd mlParkDetect
     mkdir model
-    python3 -m venv .venv             # Note that if the correct Python version is not the only one installed you should specify the version eg python3.8
+    python3.10 -m venv .venv
     pip3 install git+https://github.com/indilib/pyindi-client.git
     source .venv/bin/activate        # in Linux, do this every time you run the program to set up the virtual environment
     pip3 install -r requirements.txt
