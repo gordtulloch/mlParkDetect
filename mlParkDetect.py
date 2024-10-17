@@ -38,7 +38,7 @@ print ("mlParkDetect "+VERSION+" by Gord Tulloch report issues at https://github
 ## DO NOT EDIT FROM HERE ON
 #######################################################################################
 while True:
-	# Call the park object to determine if it's cloudy
+	# Call the park object to determine if the scope is parked
 	result,text=park.isParked()
 	if result:
 		logger.info("Parked: "+text)
